@@ -33,3 +33,5 @@ virtual/
 
 # mypy
 .mypy_cache/
+
+bak/
