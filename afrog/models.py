@@ -28,3 +28,52 @@ def create_user_profile(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
     instance.userprofile.save()
+
+
+
+class Project(models.Model):
+    title = models.CharField(max_length =60)
+    description = models.CharField(max_length =600)
+    link = models.URLField(max_length =60)
+    pub_date = models.DateTimeField(auto_now_add=True)
+    projimage = models.ImageField(upload_to = 'postimages/', blank=True )
+    comments = models.ForeignKey
+    poster = models.ForeignKey(UserProfile)  # change to poster /
+
+
+    def __str__(self):
+        return self.title
+    
+    
+    @classmethod
+    def get_projects(cls):
+        projos = cls.objects.all()
+        return projos
+
+
+    @classmethod
+    def search_by_title(cls,search_term):
+        projects = cls.objects.filter(title__icontains=search_term)
+        return projects
+
+
+    def delete_project(self):
+        self.delete()       
+
+    def save_project(self):
+        self.save()
+
+    
+
+
+class Comments(models.Model):
+    comment_content = models.CharField(max_length = 200)
+    project = models.ForeignKey(Project)
+    profile = models.ForeignKey(UserProfile)
+    date_posted = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return self.comment_content
+
+    def save_comment(self):
+        self.save()
