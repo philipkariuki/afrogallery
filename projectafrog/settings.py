@@ -65,7 +65,7 @@ AUTH_PROFILE_MODULE = "Project"
 
 INSTALLED_APPS = [
     'afrog',
-    'tinymce'.
+    'tinymce',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
