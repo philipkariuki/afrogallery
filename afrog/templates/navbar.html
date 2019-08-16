@@ -43,7 +43,7 @@
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">Post Something</a>
           <a class="dropdown-item" href="/accounts/password/change">Change Password</a>
-          <a class="dropdown-item" href="">Profile</a>
+          <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
           <a class="dropdown-item" href="/logout">Logout</a>
           {% else %}
           <a class="dropdown-item" href="/accounts/login">Login</a>
