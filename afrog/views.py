@@ -14,3 +14,13 @@ from django.utils.translation import gettext as _
 @login_required(login_url='/accounts/login/')
 def index(request):
     return render(request, 'index.html')
+
+
+def profile(request):
+	try:
+		argz = { 'user' : request.user }
+	except ObjectDoesNotExist:
+		raise Http404()
+	return render(request,'profile.html', {'profile':argz} )
+
+

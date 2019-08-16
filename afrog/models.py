@@ -14,7 +14,6 @@ class UserProfile(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
     phone = models.CharField(default=0, max_length =14)
     pic = models.ImageField(upload_to = 'profilepics2/', blank=True )
-    projects = models.CharField(max_length =420)
 
     def __str__(self):
         return self.user.username
