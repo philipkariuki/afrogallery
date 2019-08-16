@@ -50,4 +50,13 @@ footer.page-footer {
       color: #F7DAD9;
       text-shadow: 2px 2px 5px rgb(15, 56, 63);
 }
+
+.panel {
+      margin-top: 200px;
 }
+.panel-default2 {
+      margin-top: 46px;
+}
+/*.card-header {
+      margin-top: 200px;
+}*/

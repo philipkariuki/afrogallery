@@ -1,0 +1,64 @@
+{% load staticfiles %}
+
+{% load static%}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  {% if title %}
+  <title>Afro Gallery - {{title}}</title>
+  {% else %}
+    <title> Afro Gallery </title>
+  {% endif %}
+
+  {% block styles %}
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/t1.css' %}">
+  {% endblock %}
+
+</head>
+<body>
+  {% include "navbar.html" %}
+    {% block content %}  {%endblock%}
+
+
+
+
+
+
+
+
+    {% block scripts %}
+
+
+
+  <!-- JQuery -->
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <!-- Bootstrap tooltips -->
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <!-- MDB core JavaScript -->
+  <script src="{% static 'js/mdb.min.js' %}"></script>
+
+
+
+
+
+
+
+
+
+
+    {% endblock %}
+
+   </body>
+</html>
+
+    
+
+   
